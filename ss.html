@@ -1,0 +1,120 @@
+<!-- <form action="https://script.google.com/macros/s/AKfycbzU0j9_sQB5sNu1Vn_A3HwaeelZPKdyM3muDAC3ZjZA8ViLZUA6Ws0pUZM1MM0kKspv/exec" method="post">
+<input type="text" name="name" value='Namghe'><br><br>
+<input  name="email" value='Emahjil'><br><br>
+<input type="tel" name="phone" value='Phonhjke'><br><br>
+jkjhk
+<input type="submit" id="sub">
+</form> -->
+               
+<!DOCTYPE html> 
+<!-- The doctype declaration tells the browser the version of HTML that the document is written in. -->
+<html lang="ar">
+<!-- The <html> element is the root element of an HTML page, and indicates that the page is written in HTML. -->
+<head>
+    <meta charset="UTF-8">
+    <!-- The <meta> element provides metadata about the HTML document, such as character encoding. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- This meta tag tells Internet Explorer to use the latest version of the rendering engine. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The viewport meta tag specifies how the website should be scaled on different devices. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>HTML form to Google Sheet</title>
+    <!-- The title element defines the title of the document, which is displayed in the browser's title bar. -->
+</head>
+ 
+<body >
+
+      <nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="https://alaola.net/images/alaola%20logo.png" alt="" width="30" height="24">
+    </a>
+  </div>
+</nav>
+
+  <br> <br><br>
+                       <h2 class="headline-xs after-preloader-anim text-center">
+                        <span class="anim-text-fill" data-text="ALAOLA.NET™"
+                            style="font-weight: 500;color: red">ALAOLA.NET™</span><br>
+                        <br>
+                    </h2>
+     
+<div style="background-color: white" class="container">
+    <h1 id="msg"></h1>
+    <!-- The <h1> element defines a heading. The id attribute creates a unique identifier for the element. -->
+
+<form>
+        <h2> طلب بطاقة جديدة</h2>
+         <label for="exampleFormControlInput1" class="form-label">اختر العرض المناسب</label>
+  <select name="kind_of_card" class="form-select" aria-label="Default select example">
+  <option value="سنوي 149 فردية " selected>سنوي 149 فردية  </option>
+  <option value="سنوي 399 عائلية  محلية سنتين  ">سنوي 399 عائلية  محلية سنتين  </option>
+  <option value="سنوي 299 عائلية  محلية سنة ">سنوي 299 عائلية  محلية سنة  </option>
+  </select>
+<br>
+  <label for="exampleFormControlInput1" class="form-label">الاسم</label>
+  <input type="text" class="form-control" name="name" placeholder='Name'><br>
+        <!-- The <input> element is a form control element that allows the user to input data. -->
+  <label for="exampleFormControlInput1" class="form-label">الرقم الوطني</label>
+  <input type="text" class="form-control" name="national_number" placeholder='الرقم الوطني'><br>
+  <label for="exampleFormControlInput1" class="form-label">رقم الهاتف</label>
+  <input type="tel" class="form-control" name="phone_number" placeholder='رقم الهاتف'><br>
+    <label for="exampleFormControlInput1" class="form-label">المدينة</label>
+  <input type="text" class="form-control" name="city" placeholder='المدينة'><br>
+    <label for="exampleFormControlInput1" class="form-label">العنوان</label>
+  <input type="text" class="form-control" name="address" placeholder='العنوان'><br>
+
+  <input type="submit" value="ارسال" id="sub">
+  <br>
+   <a href="https://wa.me/966593355082">
+                                    <img src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-whatsapp-mobile-software-icon-png-image_6315991.png"
+                                        style="width: 30px;">
+                                </a>
+                                <br>
+        <!-- The <input type="submit"> element creates a submit button. The id attribute creates a unique identifier for the element. -->
+</form>
+</div>
+<br><br>
+
+    <script>
+        let form = document.querySelector("form");
+        // The document.querySelector() method returns the first element that matches a specified CSS selector.
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // The preventDefault() method stops the form from submitting and prevents the page from refreshing.
+            document.querySelector("#sub").value = "Submiting..";
+            // Change the value of the submit button to "Submitting..." while the form is being submitted.
+            let data = new FormData(form);
+            // The FormData() method creates a new FormData object that contains the values of all the form fields.
+            fetch('https://script.google.com/macros/s/AKfycbzw5dZ5EchBkHCjhq8r_Q4ZDhDa2H4lMNEl_4YrbIaZpbURQeQcxv3b8i_TvPHEGPiBrw/exec', {
+                    method: "POST",
+                    body: data
+                })
+                // The fetch() method is used to make a request to the server and retrieve data.
+                // This is an example API endpoint. Replace it with the actual URL for the API endpoint you want to use.
+                .then(res => res.text())
+                // The .then() method is used to handle the response from the server.
+                // The response is converted to text using the res.text() method.
+                .then(data => {
+                    document.querySelector("#msg").innerHTML = data;
+                    location.href = 'https://alaola.net/home/';
+                    // The innerHTML property sets or returns the HTML content of an element.
+                    // Here, we are setting the content of the <h1> element to the response from the server.
+                   // document.querySelector("#sub").value = "Submit"
+                    // Change the value of the submit button back to "Submit" after the form has been submitted.
+                });
+        })
+    </script>
+        <style>
+body {
+ background-image: url("https://alaola.net/landing/assets/images/saas/22919-Converted.jpg");
+ background-color: #cccccc;
+}
+
+
+
+</style>
+</body>
+ 
+</html>
+                
