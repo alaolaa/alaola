@@ -44,7 +44,7 @@ jkjhk
     <!-- The <h1> element defines a heading. The id attribute creates a unique identifier for the element. -->
 
 <form>
-       <h2 style="color: red"> طلب بطاقة جديدة</h2>
+        <h2 style="color: #1e1d43"> طلب بطاقة جديدة</h2>
          <label for="exampleFormControlInput1" class="form-label">اختر العرض المناسب</label>
   <select name="kind_of_card" class="form-select" aria-label="Default select example">
   <option value="سنوي 149 فردية " selected>سنوي 149 فردية  </option>
@@ -66,16 +66,29 @@ jkjhk
 
   <input type="submit" value="ارسال" id="sub">
   <br>
-   <a href="https://wa.me/966593355082">
+  <!--  <a href="https://wa.me/966593355082">
                                     <img src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-whatsapp-mobile-software-icon-png-image_6315991.png"
                                         style="width: 30px;">
-                                </a>
+                                </a> -->
                                 <br>
         <!-- The <input type="submit"> element creates a submit button. The id attribute creates a unique identifier for the element. -->
 </form>
 </div>
-<br><br>
 
+<br><br>
+<div style="text-align: center;" class="container">
+  <div style="color: white" class="headline-xxxxs"> رقم الاتصال</div>
+   <a style="color: white" href="tel:593355082"
+                                    class="subhead-xxs text-color-b0b0b0 text-hover-to-white js-pointer-small">593355082</a>
+                                <br>
+                                <br>
+     <a href="https://wa.me/966593355082">
+                                    <img src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-whatsapp-mobile-software-icon-png-image_6315991.png"
+                                        style="width: 30px;">
+                                </a>
+</div>
+
+<br><br>
     <script>
         let form = document.querySelector("form");
         // The document.querySelector() method returns the first element that matches a specified CSS selector.
@@ -97,7 +110,7 @@ jkjhk
                 // The response is converted to text using the res.text() method.
                 .then(data => {
                     document.querySelector("#msg").innerHTML = data;
-                    alert("تم الإرسال")
+                    alert("تم الارسال")
                     location.href = 'https://alaola.net/home/';
                     // The innerHTML property sets or returns the HTML content of an element.
                     // Here, we are setting the content of the <h1> element to the response from the server.
