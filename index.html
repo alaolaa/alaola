@@ -39,7 +39,7 @@ jkjhk
                         <br>
                     </h2>
      
-<div style="background-color: white;text-align: center;" class="container">
+<div style="background-color: white;text-align: center;width: 80%;margin-left: 10%;" class="form-control">
     <h1 id="msg"></h1>
     <!-- The <h1> element defines a heading. The id attribute creates a unique identifier for the element. -->
 
@@ -78,8 +78,8 @@ jkjhk
 <br><br><br><br>
 <div style="text-align: center;" class="container">
   <div style="color: white" class="headline-xxxxs"> رقم الاتصال</div>
-   <a style="color: white" href="tel:00966593355082"
-                                    class="subhead-xxs text-color-b0b0b0 text-hover-to-white js-pointer-small">593355082</a>
+   <a style="color: white" href="tel:593355082"
+                                    class="subhead-xxs text-color-b0b0b0 text-hover-to-white js-pointer-small">00966593355082</a>
                                 <br>
                                 <br>
      <a href="https://wa.me/966593355082">
@@ -87,6 +87,7 @@ jkjhk
                                         style="width: 30px;">
                                 </a>
 </div>
+
 
 <br><br>
     <script>
@@ -111,7 +112,7 @@ jkjhk
                 .then(data => {
                     document.querySelector("#msg").innerHTML = data;
                     alert("تم الارسال")
-                    location.href = 'https://alaola.net/home/';
+                    location.href = 'https://alaola.net/search?search_query=';
                     // The innerHTML property sets or returns the HTML content of an element.
                     // Here, we are setting the content of the <h1> element to the response from the server.
                    // document.querySelector("#sub").value = "Submit"
@@ -129,6 +130,7 @@ body {
 
 </style>
 </body>
- 
+<br><br><br><br><br><br>
+
 </html>
                 
